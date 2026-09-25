@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TCF B2 20天阅读与语法冲刺训练课程" />
+  <title>TCF B2 · 20天冲刺训练营</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="返回首页"><span class="brand-mark">F</span><span>TCF B2<br><em>20天冲刺</em></span></a>
+    <div class="top-actions"><button class="ghost-btn" id="resetBtn" type="button">重置进度</button><a class="github-link" href="https://github.com/BorisXwy/french_learning" target="_blank" rel="noreferrer">仓库 ↗</a></div>
+  </header>
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy"><p class="eyebrow">TCF / CEFR · B2 READING SPRINT</p><h1>每天 3 小时，<br><span>把阅读变成分数。</span></h1><p class="hero-lede">一套可以自己掌控节奏的 20 天训练营。学习复杂语法，拆解正式文章，建立主题词块，并用短测验确认今天真的掌握了。</p><div class="hero-actions"><button class="primary-btn" id="continueBtn" type="button">继续第 1 天 <span>→</span></button><button class="text-btn" id="overviewBtn" type="button">查看课程总览</button></div></div>
+      <div class="hero-card"><div class="ring-wrap"><svg class="progress-ring" viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="50"/><circle id="ring" class="ring-value" cx="60" cy="60" r="50"/></svg><div class="ring-label"><strong id="progressPct">0%</strong><small>已完成</small></div></div><div><p class="card-kicker">当前进度</p><h2 id="progressText">0 / 20 天</h2><p class="muted">每完成一天，进度会自动保存在本设备。</p></div></div>
+    </section>
+    <section class="shell course-layout" id="course">
+      <aside class="day-sidebar"><div class="sidebar-head"><div><p class="section-kicker">COURSE MAP</p><h2>20天路线</h2></div><span class="day-count" id="dayCount">0/20</span></div><div class="day-list" id="dayList"></div></aside>
+      <section class="lesson-panel" id="lessonPanel" aria-live="polite"></section>
+    </section>
+  </main>
+  <footer class="footer shell"><span>TCF B2 · 阅读 / 语法 / 词块识别</span><span>本地保存进度 · 无需注册</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
