@@ -1,0 +1,67 @@
+/* Shared sizing prevents long French phrases from expanding grid columns. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { overflow-wrap: anywhere; }
+.hero > *, .course-layout > *, .lesson-grid > *, .resource-grid > *,
+.lesson-head > *, .hero-card > * { min-width: 0; }
+.card-icon, .day-num { flex-shrink: 0; }
+.chips span, .reading-meta span { max-width: 100%; }
+.lesson-head .subtitle { line-height: 1.7; }
+#course, #lessonPanel, #resources { scroll-margin-top: 90px; }
+button, a { touch-action: manipulation; }
+button:focus-visible, a:focus-visible { outline: 3px solid #ec8b52; outline-offset: 3px; }
+
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .hero-card { width: 100%; max-width: 440px; }
+  .lesson-grid { grid-template-columns: minmax(0, 1fr); }
+  .lesson-card.wide { grid-column: auto; }
+  .task-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .task-row span { white-space: normal; }
+}
+
+@media (max-width: 850px) {
+  .course-layout { grid-template-columns: minmax(0, 1fr); }
+  .day-list { max-width: 100%; scroll-snap-type: x proximity; }
+  .day-item { flex: 0 0 122px; scroll-snap-align: start; }
+  .day-item.active { border: 2px solid var(--green); }
+  .options { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .option { width: 100%; min-height: 48px; padding: 12px 14px; font-size: 16px; line-height: 1.5; white-space: normal; }
+  .question { padding: 22px 0; }
+  .question p { font-size: 16px; line-height: 1.8; }
+  .explanation { font-size: 14px; line-height: 1.85; padding: 14px; }
+  .lesson-card ul, .resource-card p, .resource-card ul { font-size: 16px; }
+  .example { font-size: 17px; line-height: 1.8; }
+  .reading-text { font-size: 18px; line-height: 1.9; }
+  .chips span, .reading-meta, .point-list li { font-size: 14px; }
+  .resource-tab { min-height: 48px; flex: 0 0 auto; }
+  .ghost-btn, .text-btn, .complete-btn { min-height: 44px; }
+  .resource-tabs { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .shell { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  .topbar { height: auto; min-height: 62px; padding: 8px max(16px, env(safe-area-inset-right)) 8px max(16px, env(safe-area-inset-left)); padding-top: max(8px, env(safe-area-inset-top)); }
+  .github-link { display: none; }
+  .hero { padding-top: 32px; padding-bottom: 36px; }
+  .hero h1 { font-size: clamp(28px, 7.6vw, 42px); line-height: 1.3; letter-spacing: -.04em; }
+  .hero-lede { margin-top: 16px; font-size: 16px; line-height: 1.8; }
+  .hero-actions { flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  .hero-actions .primary-btn { width: 100%; }
+  .hero-actions .text-btn { width: 100%; }
+  .hero-card { gap: 14px; padding: 18px; }
+  .ring-wrap, .progress-ring { width: 88px; height: 88px; }
+  .lesson-head { display: block; }
+  .lesson-head h2 { font-size: 27px; line-height: 1.45; }
+  .complete-btn { width: 100%; margin-top: 16px; white-space: normal; }
+  .lesson-card, .resource-card { padding: 18px 16px; border-radius: 12px; }
+  .lesson-card h3 { align-items: flex-start; line-height: 1.6; }
+  .resource-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; }
+  .resource-tab { white-space: nowrap; }
+  .point-list { columns: 1; padding-left: 24px; }
+  .footer { display: grid; gap: 8px; padding-bottom: max(28px, env(safe-area-inset-bottom)); line-height: 1.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
